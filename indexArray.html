@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+
+// 1. Crear un array de números llamado numeros con los valores 1, 2, 3, 4, 5
+let numeros = [1, 2, 3, 4, 5];
+console.log("Paso 1:", numeros);
+
+// 2. Añadir el número 6 al final del array numeros utilizando el método push()
+numeros.push(6);
+console.log("Paso 2:", numeros);
+
+// 3. Eliminar el último elemento del array numeros utilizando el método pop()
+numeros.pop();
+console.log("Paso 3:", numeros);
+
+// 4. Añadir el número 0 al principio del array numeros utilizando el método unshift()
+numeros.unshift(0);
+console.log("Paso 4:", numeros);
+
+// 5. Eliminar el primer elemento del array numeros utilizando el método shift()
+numeros.shift();
+console.log("Paso 5:", numeros);
+
+// 6. Vaciar el array numeros utilizando el método splice() con los parámetros adecuados
+numeros.splice(0, numeros.length);
+console.log("Paso 6:", numeros);
+
+// 7. Crear un array de strings llamado colores con los valores "rojo", "azul", "verde", "amarillo", "negro", "blanco"
+let colores = ["rojo", "azul", "verde", "amarillo", "negro", "blanco"];
+console.log("Paso 7:", colores);
+
+// 8. Buscar el índice del elemento "verde" en el array colores utilizando el método indexOf()
+let indiceVerde = colores.indexOf("verde");
+console.log("Paso 8: Índice de 'verde' =", indiceVerde);
+
+// 9. Buscar el índice del último elemento "negro" en el array colores utilizando el método lastIndexOf()
+let indiceNegro = colores.lastIndexOf("negro");
+console.log("Paso 9: Índice de 'negro' =", indiceNegro);
+
+// 10. Crear un nuevo array llamado colores2 con los valores "naranja", "morado", "gris"
+let colores2 = ["naranja", "morado", "gris"];
+console.log("Paso 10:", colores2);
+
+// 11. Combinar colores y colores2
+let todosLosColores = [...colores, ...colores2];
+console.log("Paso 11: todosLosColores =", todosLosColores);
+
+// 12. Filtrar "rojo" y "azul"
+let coloresFiltrados = todosLosColores.filter(color => color !== "rojo" && color !== "azul");
+console.log("Paso 12: coloresFiltrados =", coloresFiltrados);
+
+// 13. Crear numerosDoubles (ten en cuenta que 'numeros' fue vaciado, así que lo rellenamos para que tenga sentido)
+numeros = [1, 2, 3, 4, 5];
+let numerosDobles = numeros.map(num => num * 2);
+console.log("Paso 13: numerosDobles =", numerosDobles);
+
+// 14. Reducir array numeros a suma total
+let sumaNumeros = numeros.reduce((acumulador, valor) => acumulador + valor, 0);
+console.log("Paso 14: sumaNumeros =", sumaNumeros);
+
+// 15. Mostrar todo junto
+console.log("Paso 15:");
+console.log("Array numeros:", numeros);
+console.log("Array colores:", colores);
+console.log("Índice de 'verde':", indiceVerde);
+console.log("Índice de último 'negro':", indiceNegro);
+console.log("Array todosLosColores (combinado):", todosLosColores);
+console.log("Array todosLosColores (filtrado):", coloresFiltrados);
+console.log("Array numerosDobles:", numerosDobles);
+console.log("Suma del array numeros:", sumaNumeros);
+
+</script>
+    
+</body>
+</html>

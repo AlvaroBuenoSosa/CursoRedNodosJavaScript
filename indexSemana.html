@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana</title>
+</head>
+<body>
+    <h1>Validar número entre 1 y 7</h1>
+
+    <p id="mensaje"></p>
+    <p id="mensaje2"></p>
+
+    <script>
+
+        let numero = parseInt(prompt("Dime un número del 1 al 7"), 10);
+
+        while (isNaN(numero) || numero < 1 || numero > 7) {
+            alert("Número inválido. Debe estar entre 1 y 7.");
+            numero = parseInt(prompt("Intenta de nuevo. Dime un número del 1 al 7"), 10);
+        }
+
+        alert("¡Número válido! Ingresaste: " + numero);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    switch (numero) {
+    case 1:
+        alert("Lunes");
+        break;
+    case 2:
+        alert("Martes");
+        break;
+    case 3:
+        alert("Miércoles");
+        break;
+    case 4:
+        alert("Jueves");
+        break;
+    case 5:
+        alert("Viernes");
+        break;
+    case 6:
+        alert("Sábado");
+        break;
+    case 7:
+        alert("Domingo");
+        break;
+    default:
+        alert("Número fuera de rango");
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for(let i = 1; i<=10 ; i++){
+    numeros=[i]
+    alert(numeros)
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var perros = {nombre:"doby",raza:"dalmata",color:"negro"}
+    const mensaje = document.getElementById("mensaje");
+    for(var propiedad in perros){
+        mensaje.innerHTML += propiedad + ": " + perros[propiedad] + "<br> ";
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var gatos = ["pezuñas","blanco","mino","mina"]
+    const mensaje2 = document.getElementById("mensaje2");
+    for(var gato of gatos){
+        mensaje.innerHTML += gato + "<br> ";
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        let numero2 = 1;
+
+        while (numero2 <= 10) {
+            if (numero2 % 2 === 0) {
+                document.write(numero2 + "<br>");
+            }
+            numero++;
+        }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    let number3;
+
+        do {
+    number3 = parseInt(prompt("Ingresa un número mayor que 10"), 10);
+        } while (isNaN(number3) || number3 <= 10);
+
+        alert("¡Correcto! Ingresaste: " + number3);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        let limite = parseInt(prompt("Ingresa un número límite:"), 10);
+
+        while (isNaN(limite) || limite < 1) {
+            limite = parseInt(prompt("Número inválido. Ingresa un número válido mayor que 0:"), 10);
+        }
+
+        let numero5 = 1;
+
+        document.write("<h2>Pares entre 1 y " + limite + " (máximo hasta 10):</h2>");
+
+        while (numero <= limite) {
+            if (numero > 10) {
+                break; // Detiene el bucle si se supera el 10
+            }
+
+            if (numero % 2 === 0) {
+                document.write(numero + "<br>");
+            }
+
+            numero++;
+        }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    for (let i = 1; i <= 10; i++) {
+    if (i % 2 !== 0) {
+        continue; 
+    }
+
+    if (i === 8) {
+        break; 
+    }
+
+    alert(i);
+}
+    
+    </script>
+</body>
+</html>

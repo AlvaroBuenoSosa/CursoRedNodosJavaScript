@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona</title>
+</head>
+<body>
+    <script>
+
+//Crea un objeto FechaDeNacimiento que tenga las siguiente propiedades: dia,mes y anio(año).
+function crearFechaDeNacimiento(dia, mes, anio) {
+    return {
+        dia: dia,
+        mes: mes,
+        anio: anio
+    };
+}
+
+//Crea una función llamada Persona que tenga las siguientes propiedades nombre, apellido, FechaDeNacimiento(un objeto de tipo FechaDeNacimiento) ,dni y telefono
+
+function Persona(nombre, apellido, FechaDeNacimiento, dni, telefono) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.FechaDeNacimiento = FechaDeNacimiento;
+    this.dni = dni;
+    this.telefono = telefono;
+
+    this.mostrar = function () {
+        console.log("Nombre: " + this.nombre +
+                    " Apellido: " + this.apellido +
+                    " Fecha de nacimiento: " + this.FechaDeNacimiento.dia + "/" +
+                    this.FechaDeNacimiento.mes + "/" + this.FechaDeNacimiento.anio +
+                    " DNI: " + this.dni +
+                    " Teléfono: " + this.telefono);
+    };
+
+        
+
+// Crea una función factory llamada CrearPersonaque tenga los mismos parámetros que la función constructor Persona
+
+        function CrearPersona(nombre,apellido,FechaDeNacimiento,dni,telefono){
+            return{
+            nombre : nombre,
+            apellido : apellido,
+            FechaDeNacimiento : FechaDeNacimiento,
+            dni : dni,
+            telefono : telefono,
+
+            mostrar : function(){
+            console.log("Nombre " + this.nombre + "Apellido " + this.apellido + "Fecha de nacimiento " + this.FechaDeNacimiento + "dni " + this.dni + "telefono " + this.FechaDeNacimiento )
+        }
+    };
+}
+
+
+//Agrega un metodo llamado calcularEdad a la función Persona que calcule la edad en base a su fecha de nacimiento utilizando un objeto
+
+this.calcularEdad = function () {
+        let hoy = new Date();
+        let nacimiento = new Date(this.FechaDeNacimiento.anio, this.FechaDeNacimiento.mes - 1, this.FechaDeNacimiento.dia);
+        let edad = hoy.getFullYear() - nacimiento.getFullYear();
+        let m = hoy.getMonth() - nacimiento.getMonth();
+        if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+            edad--;
+        }
+        return edad;
+    };
+}
+
+
+//Crea dos instancias Oersona, una utilizando constructor y otra utilizando la función factory.
+//Muestra por consola o en pantalla la información de ambas personas, incluyemdo su nombre,apellido,fecha de nacimineto, DNI  y edad.
+
+
+// Crear instancia usando Persona
+let fecha1 = crearFechaDeNacimiento(20, 2, 1997);
+let Persona1 = new Persona("Alvaro", "Bueno Sosa", fecha1, "45999146C", 687156398);
+Persona1.mostrar();
+console.log("Edad: " + Persona1.calcularEdad());
+
+// Función factory CrearPersona
+function CrearPersona(nombre, apellido, FechaDeNacimiento, dni, telefono) {
+    return {
+        nombre: nombre,
+        apellido: apellido,
+        FechaDeNacimiento: FechaDeNacimiento,
+        dni: dni,
+        telefono: telefono,
+
+        mostrar: function () {
+            console.log("Nombre: " + this.nombre +
+                        " Apellido: " + this.apellido +
+                        " Fecha de nacimiento: " + this.FechaDeNacimiento.dia + "/" +
+                        this.FechaDeNacimiento.mes + "/" + this.FechaDeNacimiento.anio +
+                        " DNI: " + this.dni +
+                        " Teléfono: " + this.telefono);
+        },
+
+        calcularEdad: function () {
+            let hoy = new Date();
+            let nacimiento = new Date(this.FechaDeNacimiento.anio, this.FechaDeNacimiento.mes - 1, this.FechaDeNacimiento.dia);
+            let edad = hoy.getFullYear() - nacimiento.getFullYear();
+            let m = hoy.getMonth() - nacimiento.getMonth();
+            if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+    };
+}
+
+// Crear instancia usando factory
+let fecha2 = crearFechaDeNacimiento(20, 2, 1997);
+let persona2 = CrearPersona("Alvaro", "Bueno Sosa", fecha2, "45999146C", 687156398);
+persona2.mostrar();
+console.log("Edad: " + persona2.calcularEdad());
+
+
+        
+</script>
+    
+</body>
+</html>

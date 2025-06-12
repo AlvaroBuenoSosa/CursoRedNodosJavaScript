@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <button id="buttonAltura">Indica tu altura</button>
+    <button id="buttonPeso">Indica tu peso</button>
+    <button id="buttonCalcular">Calcular</button>
+<script>
+
+    let altura = null;
+    let peso = null;
+
+    document.getElementById('buttonAltura').addEventListener('click', function() {
+      altura = prompt("Introduce tu altura en cm:");
+      alert("Tu altura es: " + altura + " cm");
+    });
+
+    document.getElementById('buttonPeso').addEventListener('click', function() {
+      peso = prompt("Introduce tu peso en kg:");
+      alert("Tu peso es: " + peso + " kg");
+    });
+
+        //Definir una función sencilla
+        function calcularImc(peso,altura){
+            return peso / (altura * altura);
+        }
+        
+        //Llamar a la función cuando se haga click en un botón
+            document.getElementById("buttonCalcular").addEventListener("click", function() {
+      if (peso && altura) {
+        const imc = calcularImc(peso, altura);
+        alert("Tu IMC es: " + imc.toFixed(2));
+      } else {
+        alert("Por favor, introduce primero tu altura y peso.");
+      }
+    });
+    </script>
+    
+</body>
+</html>
