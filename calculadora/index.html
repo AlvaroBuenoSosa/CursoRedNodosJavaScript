@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JavaScript</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora JavaScript</h1>
+        <form id="calculator-form">
+            <input type="text" id="first-number" placeholder="Primer número">
+            <select id="operation">
+                <option value="add">Sumar</option>
+                <option value="subtract">Restar</option>
+                <option value="multiply">Multiplicar</option>
+                <option value="divide">Dividir</option>
+            </select>
+            <input type="text" id="second-number" placeholder="Segundo número">
+            <button type="button" id="calculate">Calcular</button>
+        </form>
+        <div id="result">
+            Resultado: <span id="result-value">0</span>
+        </div>
+        <div id="history">
+            <h2>Historial de Operaciones</h2>
+            <ul id="history-list">
+                <!-- Aquí se mostrarán las operaciones anteriores -->
+            </ul>
+            <button type="button" id="clear-history">Borrar Historial</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
